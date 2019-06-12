@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { TableComponent } from './component/table/table.component';
 import { DropdownComponent } from './component/dropdown/dropdown.component';
 import { InputComponent } from './component/input/input.component';
+import { HttpClientModule } from '@angular/common/http';
 // import {AccordionModule} from 'primeng/accordion';     //accordion and accordion tab
 // import {MenuItem} from 'primeng/api'; 
 
@@ -22,7 +23,9 @@ import { InputComponent } from './component/input/input.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    // import HttpClientModule after BrowserModule.
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

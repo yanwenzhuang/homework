@@ -2,16 +2,26 @@ import { Injectable } from '@angular/core';
 import { Someone } from './someone';
 import { PEOPLE } from './mock-people';
 import { Observable, of } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+
+export interface Config {
+  id:string;
+  name:string;
+  sex:string;
+  phone:string;
+  address:string;
+}
 
 @Injectable({
   providedIn: 'root'
 })
 export class TableService {
+  configUrl = 'assets/people.json';
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   getPeople(): Observable<Someone[]> {
-    return of(PEOPLE);
+    return this.http.get(this.configUrl);
   }
 
 }

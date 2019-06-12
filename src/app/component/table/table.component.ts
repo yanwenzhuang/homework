@@ -22,4 +22,10 @@ export class TableComponent implements OnInit {
     .subscribe(people => this.people = people);
   }
 
+
+//   .subscribe((data: Config) => this.config = {
+//     heroesUrl: data['heroesUrl'],
+//     textfile:  data['textfile']
+// });
+
 }
