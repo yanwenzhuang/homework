@@ -1,4 +1,16 @@
+
+<select [(ngModel)]="sex">
+    <option *ngFor="let item of sexs"
+     [value]='item'>{{item || '请选择'}}</option>  
+  </select>
+
+<br>
+{{sex}}
+
+
+
+<!-- <br>
+
 <select >
-  <option value="man">man</option>
-  <option value="woman">woman</option>
-</select>
+  <option *ngFor="let col of tHead" value="{{col}}">{{col}}</option>
+</select> -->

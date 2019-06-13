@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 import { TableService, People } from '../../table.service';
 import { Someone } from 'src/app/someone';
 
@@ -10,6 +10,9 @@ import { Someone } from 'src/app/someone';
 export class TableComponent implements OnInit {
   
   people:Someone[];
+  tHead: string[]=['id','name','sex','phone','address'];
+
+  @Input() i: string;
 
   constructor(private tableService:TableService) { }
 
@@ -31,5 +34,13 @@ export class TableComponent implements OnInit {
     }
    );
   }
+
+
+  // array.forEach(element => {
+    
+  // });
+ 
+
+  
 
 }

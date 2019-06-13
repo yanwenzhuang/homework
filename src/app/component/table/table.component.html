@@ -8,15 +8,15 @@
  </head>
 <body>
 
+		<div *ngIf="i">{{i}}
+			</div>
+
+
 <table border="1">
 	<caption>表格</caption>
 	<thead>
 		<tr>
-			<th>id</th>
-      <th>name</th>
-      <th>sex</th>
-      <th>phone</th>
-      <th>address</th>
+			<th *ngFor="let col of tHead">{{col}}</th>
 		</tr>
   </thead>
 

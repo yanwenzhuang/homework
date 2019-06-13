@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FirstComponent implements OnInit {
 
+  i: string = '';
+
+  stringIChange(i:string) {
+    this.i = i;
+  }
+
   constructor() { }
 
   ngOnInit() {
   }
+
+
 
 }

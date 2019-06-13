@@ -1,10 +1,16 @@
 <!-- <p>
   first works!
 </p> -->
-<app-table></app-table>
+<app-table [i]="i"></app-table>
+<br>
+{{i}}
 <br>
 <label>下拉框：</label>
-<app-dropdown></app-dropdown>
+<app-dropdown (soonOutput)="stringIChange($event)" ></app-dropdown>
 <br><br>
 <label>输入框：</label>
 <app-input></app-input>
+
+
+
+
