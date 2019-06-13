@@ -31,16 +31,19 @@ export class TableComponent implements OnInit {
     .subscribe((data: People) => {
       this.people = data.people;
       console.log(this.people);
+
+      // data.people.forEach()
+
+
     }
    );
   }
 
+  
 
   // array.forEach(element => {
     
   // });
  
-
-  
 
 }
