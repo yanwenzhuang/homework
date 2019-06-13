@@ -4,12 +4,16 @@ import { PEOPLE } from './mock-people';
 import { Observable, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
-export interface Config {
+export interface Someone {
   id:string;
   name:string;
   sex:string;
   phone:string;
   address:string;
+}
+
+export interface People{
+  people:Someone[];
 }
 
 @Injectable({
@@ -20,8 +24,9 @@ export class TableService {
 
   constructor(private http: HttpClient) { }
 
-  getPeople(): Observable<Someone[]> {
-    return this.http.get(this.configUrl);
+  getPeople(): Observable<People> {
+    // return of(PEOPLE);
+    return this.http.get<People>(this.configUrl);
   }
 
 }

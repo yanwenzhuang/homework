@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TableService } from '../../table.service';
+import { TableService, People } from '../../table.service';
 import { Someone } from 'src/app/someone';
 
 @Component({
@@ -8,8 +8,8 @@ import { Someone } from 'src/app/someone';
   styleUrls: ['./table.component.scss']
 })
 export class TableComponent implements OnInit {
-
-  people:Someone[]
+  
+  people:Someone[];
 
   constructor(private tableService:TableService) { }
 
@@ -17,15 +17,19 @@ export class TableComponent implements OnInit {
     this.getPeople();
   }
 
-  getPeople(): void {
+  // getPeople(): void {
+  //   this.tableService.getPeople()
+  //   .subscribe(people => this.people = people);
+  // }
+
+
+  getPeople(): void{
     this.tableService.getPeople()
-    .subscribe(people => this.people = people);
+    .subscribe((data: People) => {
+      this.people = data.people;
+      console.log(this.people);
+    }
+   );
   }
-
-
-//   .subscribe((data: Config) => this.config = {
-//     heroesUrl: data['heroesUrl'],
-//     textfile:  data['textfile']
-// });
 
 }
