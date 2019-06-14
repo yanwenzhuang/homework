@@ -7,10 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FirstComponent implements OnInit {
 
-  i: string = '';
+  soonInput: string = '';
 
-  stringIChange(i:string) {
-    this.i = i;
+  stringIChange(soonInput:string) {
+    this.soonInput = soonInput;
   }
 
   constructor() { }

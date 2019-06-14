@@ -7,10 +7,7 @@
 	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
  </head>
 <body>
-
-		<div *ngIf="i">{{i}}
-			</div>
-
+	<div>{{soonInput}}</div>	
 
 <table border="1">
 	<caption>表格</caption>
@@ -21,7 +18,7 @@
   </thead>
 
 	<tbody>
-		<tr *ngFor="let someone of people">
+		<tr *ngFor="let someone of someones">
       <td>{{someone.id}}</td>
       <td>{{someone.name}}</td>
       <td>{{someone.sex}}</td>
