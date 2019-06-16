@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Output,EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-input',
@@ -9,7 +9,14 @@ export class InputComponent implements OnInit {
 
   title = '';
 
-  constructor() { }
+  @Output()
+  soonOutput:EventEmitter<string>=new EventEmitter();
+
+  constructor() {
+    setInterval(() => {
+      this.soonOutput.emit(this.title);
+  }, 1000);
+   }
 
   ngOnInit() {
   }

@@ -1,5 +1,19 @@
 
-
+<label>输入框：</label>
 <input [(ngModel)]="title" placeholder="请输入"/>
 <br>
-{{title}}
+
+
+<!-- <div >
+    <h4><label for="search-box">Someone Search</label></h4>
+   
+    <input #searchBox id="search-box" (input)="search(searchBox.value)" />
+   
+    <ul class="search-result">
+      <li *ngFor="let someone of someones$ | async" >
+        <a routerLink="/detail/{{someone.id}}">
+          {{someone.name}}
+        </a>
+      </li>
+    </ul>
+  </div> -->

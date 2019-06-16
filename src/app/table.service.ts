@@ -29,4 +29,14 @@ export class TableService {
     return this.http.get<People>(this.configUrl);
   }
 
+
+  /* GET heroes whose name contains search term */
+searchHeroes(term: string): Observable<Someone[]> {
+  if (!term.trim()) {
+    // if not search term, return empty hero array.
+    return of([]);
+  }
+  return this.http.get<Someone[]>(`${this.configUrl}/?name=${term}`)
+}
+
 }

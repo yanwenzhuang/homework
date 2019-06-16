@@ -10,12 +10,13 @@ import { Someone } from 'src/app/someone';
 export class TableComponent implements OnChanges,OnInit {
   
   people:Someone[];
-  someones=[];
+  someones:Someone[] =[];
   tHead: string[]=['id','name','sex','phone','address'];
-
   @Input() soonInput: string;
+  soonOutput:string
 
-  constructor(private tableService:TableService) { }
+  constructor(private tableService:TableService) { 
+  }
 
   ngOnInit() {
     this.getPeople();
@@ -23,18 +24,22 @@ export class TableComponent implements OnChanges,OnInit {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log(this.soonInput);
     this.someones = [];
     this.people.forEach(someone=>{
       if(someone.sex==this.soonInput){
-        
         this.someones.push(someone)
       }
+
+      console.log(this.soonInput);
+      
+      console.log(this.soonOutput);
+      
+      // if(someone.name.indexOf(this.soonOutput)!=-1){
+      //   this.someones.push(someone)
+      // }
+
     });
-
-    
    }
-
 
   getPeople(): void{
     this.tableService.getPeople()
@@ -45,29 +50,8 @@ export class TableComponent implements OnChanges,OnInit {
    );
   }
 
-
-  // data.people.forEach(someone=>{
-        // console.log(this.soonInput);
-        // console.log(someone.sex);
-        // if(someone.sex==this.soonInput){
-        //     console.log(someone);
-        // this.people.push(someone);
-        // }
-
-      // });
-
-
-      // Object.is('foo', 'foo');
-
-
-  // getPeople(): void {
-  //   this.tableService.getPeople()
-  //   .subscribe(people => this.people = people);
-  // }
-
-  // array.forEach(element => {
-    
-  // });
- 
+  stringIChange(soonInput:string) {
+    this.soonOutput = soonInput;
+  }
 
 }

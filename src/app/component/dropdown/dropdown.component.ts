@@ -19,9 +19,6 @@ export class DropdownComponent implements OnInit {
     setInterval(() => {
       this.soonOutput.emit(this.sex);
   }, 1000);
-
-
-    // this.soonOutput.emit(this.sex);
    }
 
   ngOnInit() {
