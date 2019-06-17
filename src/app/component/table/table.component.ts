@@ -17,7 +17,8 @@ export class TableComponent implements OnChanges,OnInit {
   someones:Someone[] =[];
   tHead: string[]=['id','name','sex','phone','address'];
   @Input() soonInput: string;
-  soonOutput:string
+  soonOutput:string;
+  loading: boolean = true;
 
   constructor(private tableService:TableService) { 
   }
@@ -36,28 +37,21 @@ export class TableComponent implements OnChanges,OnInit {
       if(someone[this.soonInput].indexOf(this.soonOutput)!=-1){
         this.someones.push(someone);
       }
-
     });
-
-
-    
-    // this.someones = [];
-    // this.people.forEach(someone=>{
-    //   if(someone.sex==this.soonInput){
-    //     this.someones.push(someone)
-    //   }
-    //   // if(someone.name.indexOf(this.soonOutput)!=-1){
-    //   //   this.someones.push(someone)
-    //   // }
-
-    // });
    }
+  //  setTimeout('', 5000);
 
   getPeople(): void{
     this.tableService.getPeople()
     .subscribe((data: People) => {
       this.people = data.people;
-      this.someones = this.people;
+      this.someones = [...this.people];
+      if(this.people != null){
+        setTimeout(() => {
+          this.loading = false;
+        }, 500);
+        
+      }
     }
    );
   }

@@ -5,6 +5,8 @@
  </head>
 <body>
 
+  <p *ngIf="loading">加载中... </p>
+  <!-- <p *ngIf="true">加载中...</p> -->
 
 <p-table [value]="someones">
     <ng-template pTemplate="header">
@@ -22,10 +24,6 @@
       </tr>
     </ng-template>
 </p-table>
-
-
-
-
 </body>
 </html> 
 <br>
