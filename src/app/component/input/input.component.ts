@@ -13,8 +13,9 @@ export class InputComponent implements OnInit {
   soonOutput:EventEmitter<string>=new EventEmitter();
 
   constructor() {
+    
     setInterval(() => {
-      this.soonOutput.emit(this.title);
+     this.soonOutput.emit(this.title); 
   }, 1000);
    }
 

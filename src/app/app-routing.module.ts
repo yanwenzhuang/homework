@@ -5,6 +5,7 @@ import { SecondComponent }      from './component/second/second.component';
 
 const routes: Routes = [
   { path: 'first', component: FirstComponent },
+  { path: '', redirectTo: '/first', pathMatch: 'full' },
   { path: 'second', component: SecondComponent }
 ];
 

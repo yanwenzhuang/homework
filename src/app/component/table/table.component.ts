@@ -2,11 +2,15 @@ import { Component, OnInit,Input,OnChanges,SimpleChanges } from '@angular/core';
 import { TableService, People } from '../../table.service';
 import { Someone } from 'src/app/someone';
 
+
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.scss']
 })
+
+
+
 export class TableComponent implements OnChanges,OnInit {
   
   people:Someone[];
@@ -24,21 +28,29 @@ export class TableComponent implements OnChanges,OnInit {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
+    console.log(this.soonInput);
+    console.log(this.soonOutput);
     this.someones = [];
-    this.people.forEach(someone=>{
-      if(someone.sex==this.soonInput){
-        this.someones.push(someone)
+    this.people.forEach(someone =>{
+      // someone[this.soonInput]   //要查询的某字段的值
+      if(someone[this.soonInput].indexOf(this.soonOutput)!=-1){
+        this.someones.push(someone);
       }
 
-      console.log(this.soonInput);
-      
-      console.log(this.soonOutput);
-      
-      // if(someone.name.indexOf(this.soonOutput)!=-1){
-      //   this.someones.push(someone)
-      // }
-
     });
+
+
+    
+    // this.someones = [];
+    // this.people.forEach(someone=>{
+    //   if(someone.sex==this.soonInput){
+    //     this.someones.push(someone)
+    //   }
+    //   // if(someone.name.indexOf(this.soonOutput)!=-1){
+    //   //   this.someones.push(someone)
+    //   // }
+
+    // });
    }
 
   getPeople(): void{

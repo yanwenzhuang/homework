@@ -4,8 +4,7 @@
 	<meta charset="utf-8"> 	
  </head>
 <body>
-		{{soonOutput}}
-<table border="1">
+<!-- <table border="1">
 	<caption>表格</caption>
 	<thead>
 		<tr>
@@ -21,7 +20,29 @@
       <td>{{someone.address}}</td>
     </tr>
   </tbody>
-</table>
+</table> -->
+
+
+<p-table [value]="someones">
+    <ng-template pTemplate="header">
+        <tr>
+          <th *ngFor="let col of tHead">{{col}}</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-someone>
+      <tr>
+        <td>{{someone.id}}</td>
+        <td>{{someone.name}}</td>
+        <td>{{someone.sex}}</td>
+        <td>{{someone.phone}}</td>
+        <td>{{someone.address}}</td>
+      </tr>
+    </ng-template>
+</p-table>
+
+
+
+
 </body>
 </html> 
 <br>
