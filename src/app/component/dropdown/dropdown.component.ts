@@ -7,7 +7,14 @@ import { Component, OnInit ,Output,EventEmitter} from '@angular/core';
 })
 
 export class DropdownComponent implements OnInit {
-  sexs:string[]=['','id','name','sex','phone','address'];
+  // sexs:string[]=['','id','name','sex','phone','address'];
+  sexs =[
+    {label:'id', value:'id'},
+    {label:'name', value:'name'},
+    {label:'sex', value:'sex'},
+    {label:'phone', value:'phone'},
+    {label:'address', value:'address'}
+    ];
   sex:string='';
  
   
