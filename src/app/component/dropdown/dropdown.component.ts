@@ -16,21 +16,21 @@ export class DropdownComponent implements OnInit {
     {label:'address', value:'address'}
     ];
   sex:string='';
- 
   
   
   @Output()
   soonOutput:EventEmitter<string>=new EventEmitter();
 
   constructor() {
-    setInterval(() => {
-      this.soonOutput.emit(this.sex);
-    }, 1000);
    }
 
   ngOnInit() {
   }
 
+
+  onChange(event) {
+    this.soonOutput.emit(this.sex);
+}
   
 
 }

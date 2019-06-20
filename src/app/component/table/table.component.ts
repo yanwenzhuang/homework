@@ -25,21 +25,23 @@ export class TableComponent implements OnChanges,OnInit {
 
   ngOnInit() {
     this.getPeople();
-    
   }
 
   ngOnChanges(changes: SimpleChanges): void {
     console.log(this.soonInput);
     console.log(this.soonOutput);
-    this.someones = [];
-    this.people.forEach(someone =>{
-      // someone[this.soonInput]   //要查询的某字段的值
-      if(someone[this.soonInput].indexOf(this.soonOutput)!=-1){
-        this.someones.push(someone);
-      }
-    });
+    
+    if(this.soonOutput != null){
+      this.someones = [];
+      this.people.forEach(someone =>{
+        // someone[this.soonInput]   //要查询的某字段的值
+        if(someone[this.soonInput].indexOf(this.soonOutput)!=-1){
+          this.someones.push(someone);
+        }
+      });
+    }
    }
-  //  setTimeout('', 5000);
+  
 
   getPeople(): void{
     this.tableService.getPeople()
@@ -49,15 +51,14 @@ export class TableComponent implements OnChanges,OnInit {
       if(this.people != null){
         setTimeout(() => {
           this.loading = false;
-        }, 500);
-        
+        }, 400);
       }
     }
    );
   }
 
-  stringIChange(soonInput:string) {
-    this.soonOutput = soonInput;
+  stringIChange(soonOutput:string) {
+    this.soonOutput = soonOutput;
   }
 
 }
