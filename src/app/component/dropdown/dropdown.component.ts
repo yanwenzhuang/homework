@@ -23,17 +23,12 @@ export class DropdownComponent implements OnInit {
   soonOutput:EventEmitter<string>=new EventEmitter();
 
   constructor() {
-    // setTimeout(()=>{
-    //   this.soonOutput.emit(this.sex);
-    // },100)
-    
     setInterval(() => {
       this.soonOutput.emit(this.sex);
     }, 1000);
    }
 
   ngOnInit() {
-    
   }
 
   
