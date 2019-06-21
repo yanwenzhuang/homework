@@ -30,7 +30,7 @@ export class TableComponent implements OnChanges,OnInit {
   ngOnChanges(changes: SimpleChanges): void {
     console.log(this.dropdownInput);
     console.log(this.inputInput);
-    if(this.inputInput != "" || this.dropdownInput !=""){
+    if(this.inputInput != "" && this.dropdownInput !=""){
     this.someones = [];
       this.people.forEach(someone =>{
         if(someone[this.dropdownInput].indexOf(this.inputInput)!=-1){
