@@ -9,7 +9,7 @@ export class InputComponent implements OnInit {
   title = "";
 
   @Output()
-  soonOutput: EventEmitter<string> = new EventEmitter();
+  inputOutput: EventEmitter<string> = new EventEmitter();
 
   constructor() {
   }
@@ -18,7 +18,7 @@ export class InputComponent implements OnInit {
   }
 
   onBlur() { 
-    this.soonOutput.emit(this.title);
+    this.inputOutput.emit(this.title);
   }
 
  

@@ -19,7 +19,7 @@ export class DropdownComponent implements OnInit {
   
   
   @Output()
-  soonOutput:EventEmitter<string>=new EventEmitter();
+  dropdownOutput:EventEmitter<string>=new EventEmitter();
 
   constructor() {
    }
@@ -29,7 +29,7 @@ export class DropdownComponent implements OnInit {
 
 
   onChange(event) {
-    this.soonOutput.emit(this.sex);
+    this.dropdownOutput.emit(this.sex);
 }
   
 

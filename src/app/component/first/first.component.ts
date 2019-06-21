@@ -7,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FirstComponent implements OnInit {
 
-  soonInput: string = '';
+  dropdownInput: string = '';
+  inputInput: string = '';
 
-  stringIChange(soonInput:string) {
-    this.soonInput = soonInput;
+  stringDChange(dropdownOutput:string) {
+    this.dropdownInput = dropdownOutput;
+  }
+
+  stringIChange(inputOutput:string) {
+    this.inputInput = inputOutput;
   }
 
   constructor() { }

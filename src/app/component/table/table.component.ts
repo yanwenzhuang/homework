@@ -16,8 +16,8 @@ export class TableComponent implements OnChanges,OnInit {
   people:Someone[];
   someones:Someone[] =[];
   tHead: string[]=['id','name','sex','phone','address'];
-  @Input() soonInput: string;
-  soonOutput:string;
+  @Input() dropdownInput: string;
+  @Input() inputInput: string;
   loading: boolean = true;
 
   constructor(private tableService:TableService) { 
@@ -28,18 +28,27 @@ export class TableComponent implements OnChanges,OnInit {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log(this.soonInput);
-    console.log(this.soonOutput);
-    
-    if(this.soonOutput != null){
-      this.someones = [];
+    console.log(this.dropdownInput);
+    console.log(this.inputInput);
+    if(this.inputInput != "" || this.dropdownInput !=""){
+    this.someones = [];
       this.people.forEach(someone =>{
-        // someone[this.soonInput]   //要查询的某字段的值
-        if(someone[this.soonInput].indexOf(this.soonOutput)!=-1){
+        if(someone[this.dropdownInput].indexOf(this.inputInput)!=-1){
           this.someones.push(someone);
         }
       });
     }
+
+    // if(this.inputInput != null && this.dropdownInput !=null){
+    //   this.someones = [];
+    //   this.people.forEach(someone =>{
+    //     if(someone[this.dropdownInput].indexOf(this.inputInput)!=-1){
+    //       this.someones.push(someone);
+    //     }
+    //   });
+    // }else{
+    //   this.someones = this.people;
+    // }
    }
   
 
@@ -57,8 +66,5 @@ export class TableComponent implements OnChanges,OnInit {
    );
   }
 
-  stringIChange(soonOutput:string) {
-    this.soonOutput = soonOutput;
-  }
 
 }
