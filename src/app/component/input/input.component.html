@@ -1,45 +1,17 @@
 <html>
-  <head>  
-  </head>
+  <head> </head>
   <body>
-    <!-- <label>输入框：</label>
-    <input [(ngModel)]="title" pInputText placeholder="请输入" />
-    <br /> -->
-
     <div class="ui-g ui-fluid">
       <div class="ui-g-12 ui-md-4">
         <div class="ui-inputgroup">
           <span class="ui-inputgroup-addon">输入框:</span>
-          <input type="text" pInputText [(ngModel)]="title" (blur)="onBlur()"
-            placeholder="请输入" 
+          <input
+            type="text" pInputText #input
+            (blur)="onBlur(input.value); input.value = ''"
+            placeholder="请输入"
           />
-          <!-- <input type="text" [(ngModel)]="title" pInputText
-            placeholder="请输入" (keyup)="onKey($event)"
-          /> -->
         </div>
       </div>
     </div>
   </body>
 </html>
-
-
-<!-- <input type="text" 
-   placeholder={{placeholderText}}
-   (focus)="placeholderText = ''" 
-   (blur)="placeholderText = 'the placeholder'"> -->
-
-<!-- (blur)="onBlurMethod()" -->
-
-<!-- <div >
-    <h4><label for="search-box">Someone Search</label></h4>
-   
-    <input #searchBox id="search-box" (input)="search(searchBox.value)" />
-   
-    <ul class="search-result">
-      <li *ngFor="let someone of someones$ | async" >
-        <a routerLink="/detail/{{someone.id}}">
-          {{someone.name}}
-        </a>
-      </li>
-    </ul>
-  </div> -->

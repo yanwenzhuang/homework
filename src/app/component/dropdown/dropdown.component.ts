@@ -15,7 +15,7 @@ export class DropdownComponent implements OnInit {
     {label:'phone', value:'phone'},
     {label:'address', value:'address'}
     ];
-  sex:string='';
+  // sex:string='';
   
   
   @Output()
@@ -28,8 +28,8 @@ export class DropdownComponent implements OnInit {
   }
 
 
-  onChange(event) {
-    this.dropdownOutput.emit(this.sex);
+  onChange(event, dropdown: string) {
+    this.dropdownOutput.emit(dropdown);
 }
   
 

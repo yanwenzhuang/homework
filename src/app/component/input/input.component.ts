@@ -17,8 +17,8 @@ export class InputComponent implements OnInit {
   ngOnInit() {
   }
 
-  onBlur() { 
-    this.inputOutput.emit(this.title);
+  onBlur(title: string) { 
+    this.inputOutput.emit(title);
   }
 
  
